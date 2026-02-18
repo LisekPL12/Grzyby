@@ -6,14 +6,14 @@
 <body>
 <form action="login.php">
   <text>Login: </text><input type="text" name="login"><br>
-  <text>Hasło: </text><input type="text" name="haslo"><br>
+  <text>Hasło: </text><input type="text" name="Passw"><br>
   <input type="submit" value="Submit">
 </form> 
 
 <?php
-if (isset($_GET['login'])&&($_GET['haslo'])) {
+if (isset($_GET['login'])&&($_GET['Passw'])) {
     $con = new mysqli("localhost","root","","users");
-    $query1 = "SELECT 'Login', 'Hasło' FROM users WHERE Login='".$_GET['login']."' AND Hasło='".$_GET['haslo']."'";
+    $query1 = "SELECT 'Login', 'Passw' FROM users WHERE Login='".$_GET['login']."' AND Hasło='".$_GET['Passw']."'";
 
     $wynik1=$con->query($query1);
     $row1=$wynik1->fetch_array();
@@ -25,7 +25,7 @@ if (isset($_GET['login'])&&($_GET['haslo'])) {
     else {
         echo("Nie jesteś zalogowany");
 
-        mysql_query("INSERT INTO users (Login, Hasło) VALUE (".$_GET['login'].", ".$_GET['haslo'].")");
+        mysql_query("INSERT INTO users (Login, Hasło) VALUE (".$_GET['login'].", ".$_GET['Passw'].")");
 
    }
 
@@ -36,3 +36,4 @@ if (isset($_GET['login'])&&($_GET['haslo'])) {
 </body>
 
 </html>
+
