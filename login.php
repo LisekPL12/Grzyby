@@ -4,7 +4,7 @@
 <title>Skibidi</title>
 </head>
 <body>
-<form action="login_leszcz.php">
+<form action="login.php">
   <text>Login: </text><input type="text" name="login"><br>
   <text>Hasło: </text><input type="text" name="haslo"><br>
   <input type="submit" value="Submit">
@@ -34,4 +34,5 @@ if (isset($_GET['login'])&&($_GET['haslo'])) {
 }
 ?>
 </body>
+
 </html>
